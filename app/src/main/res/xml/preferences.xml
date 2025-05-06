@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+   xmlns:app="http://schemas.android.com/apk/res-auto">
+
+   <com.takisoft.preferencex.PreferenceCategory
+      app:key="connect_category"
+      app:title="@string/connect">
+
+      <ListPreference
+         app:defaultValue="load"
+         app:dialogTitle="@string/auto_mode_pref_title"
+         app:icon="@drawable/ic_auto"
+         app:key="@string/auto_mode_key"
+         app:summary="@string/auto_mode_summary"
+         app:title="@string/auto_mode_pref_title" />
+
+      <SeekBarPreference
+         android:max="25"
+         app:defaultValue="8"
+         app:icon="@drawable/ic_baseline_access_time_24"
+         app:key="@string/reconnect_timeout_key"
+         app:min="3"
+         app:showSeekBarValue="true"
+         app:summary="@string/reconnect_timeout_summary"
+         app:title="@string/reconnect_timeout_title" />
+
+      <SeekBarPreference
+         android:max="20"
+         app:defaultValue="5"
+         app:icon="@drawable/ic_baseline_refresh_24"
+         app:key="@string/reconnect_retries_key"
+         app:min="1"
+         app:showSeekBarValue="true"
+         app:summary="@string/reconnect_retries_summary"
+         app:title="@string/reconnect_retries_title" />
+
+   </com.takisoft.preferencex.PreferenceCategory>
+
+   <com.takisoft.preferencex.PreferenceCategory
+      app:key="appearance_category"
+      app:title="@string/appearance">
+
+      <ListPreference
+         app:defaultValue="default"
+         app:dialogTitle="@string/language_dialog_title"
+         app:icon="@drawable/ic_baseline_language_24"
+         app:key="@string/lang_key"
+         app:summary="@string/lang_summary"
+         app:title="@string/language_pref_title" />
+
+      <ListPreference
+         app:defaultValue="default"
+         app:dialogTitle="@string/dark_mode"
+         app:icon="@drawable/ic_dark_mode_24"
+         app:key="@string/display_mode_key"
+         app:summary="@string/display_mode_summary"
+         app:title="@string/dark_mode" />
+   </com.takisoft.preferencex.PreferenceCategory>
+
+   <com.takisoft.preferencex.PreferenceCategory
+      app:key="system_category"
+      app:title="@string/system">
+
+      <Preference
+         app:icon="@drawable/ic_baseline_vpn_key_24"
+         app:isPreferenceVisible="false"
+         app:key="@string/go_to_vpn_settings_key"
+         app:title="@string/go_to_vpn_settings" />
+
+      <Preference
+         app:icon="@drawable/ic_baseline_settings_24"
+         app:key="@string/go_to_info_page_key"
+         app:title="@string/go_to_app_info_page" />
+   </com.takisoft.preferencex.PreferenceCategory>
+
+   <com.takisoft.preferencex.PreferenceCategory
+      app:key="notifications_category"
+      app:title="@string/notifications">
+
+      <com.takisoft.preferencex.SwitchPreferenceCompat
+         app:defaultValue="true"
+         app:icon="@drawable/ic_baseline_notifications_24"
+         app:key="@string/persistent_notif_key"
+         app:summary="@string/persistent_notification_summary"
+         app:title="@string/persistent_notification" />
+   </com.takisoft.preferencex.PreferenceCategory>
+
+   <com.takisoft.preferencex.PreferenceCategory
+      app:isPreferenceVisible="false"
+      app:key="ads_category"
+      app:title="@string/ads">
+
+      <Preference
+         app:isPreferenceVisible="false"
+         app:key="@string/reset_gdpr_key"
+         app:title="@string/reset_gdpr" />
+
+   </com.takisoft.preferencex.PreferenceCategory>
+
+   <com.takisoft.preferencex.PreferenceCategory
+      app:key="subscriptions_category"
+      app:title="@string/show_subscriptions">
+
+      <Preference
+         app:key="@string/my_subscriptions_key"
+         app:title="@string/show_subscriptions" />
+
+   </com.takisoft.preferencex.PreferenceCategory>
+
+</PreferenceScreen>

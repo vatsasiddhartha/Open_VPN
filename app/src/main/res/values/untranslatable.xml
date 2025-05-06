@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   <string name="app_name" translatable="false">OVPN</string>
+
+   <!-- Info below is used is the included Privacy Policy and Terms of Service -->
+   <!-- Support email  -->
+   <string name="support_email" translatable="false">support@android.ovpn.com</string>
+
+   <!-- Developer or company name -->
+   <string name="developer_name" translatable="false">ovpn</string>
+
+   <!-- Your website -->
+   <string name="website" translatable="false">android.ovpn.com</string>
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   <dimen name="server_badge_text_size">14sp</dimen>
+   <dimen name="server_title_size">16sp</dimen>
+   <dimen name="server_icon_size">48dp</dimen>
+   <dimen name="server_arrow_size">36dp</dimen>
+</resources>

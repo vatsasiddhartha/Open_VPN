@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   xmlns:app="http://schemas.android.com/apk/res-auto"
+   xmlns:tools="http://schemas.android.com/tools"
+   android:layout_width="match_parent"
+   android:layout_height="match_parent"
+   android:background="@color/card_background"
+   app:layout_constraintEnd_toEndOf="@id/guideline_middle"
+   app:layout_constraintStart_toStartOf="parent">
+
+   <TextView
+      android:id="@+id/locationLabel"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="16dp"
+      android:text="@string/select_server"
+      android:textSize="16sp"
+      app:layout_constraintBottom_toBottomOf="@id/refresh"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="@id/refresh" />
+
+   <ImageButton
+      android:id="@+id/refresh"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="8dp"
+      android:layout_marginEnd="16dp"
+      android:background="@drawable/focused_transparent_button_background"
+      android:contentDescription="@string/refresh_servers_list"
+      android:nextFocusDown="@id/serversList"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:srcCompat="@drawable/ic_baseline_refresh_24" />
+
+   <androidx.cardview.widget.CardView
+      android:id="@+id/currentLocationLayoutLand"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginHorizontal="16dp"
+      android:layout_marginVertical="8dp"
+      android:clickable="false"
+      android:focusable="false"
+      app:cardBackgroundColor="@color/card_background"
+      app:cardCornerRadius="8dp"
+      app:cardElevation="4dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/refresh">
+
+      <androidx.constraintlayout.widget.ConstraintLayout
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:padding="8dp">
+
+         <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/locationFlag"
+            android:layout_width="@dimen/server_icon_size"
+            android:layout_height="@dimen/server_icon_size"
+            android:src="@drawable/ic_auto"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+         <TextView
+            android:id="@+id/locationTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/auto"
+            android:textSize="@dimen/server_title_size"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/locationFlag"
+            app:layout_constraintTop_toTopOf="parent" />
+
+         <TextView
+            android:id="@+id/locationSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textSize="@dimen/server_title_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/locationTitle"
+            app:layout_constraintTop_toTopOf="parent" />
+
+      </androidx.constraintlayout.widget.ConstraintLayout>
+
+   </androidx.cardview.widget.CardView>
+
+   <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/serversList"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:fadeScrollbars="false"
+      android:nextFocusUp="@id/refresh"
+      android:orientation="vertical"
+      android:scrollbars="vertical"
+      android:visibility="invisible"
+      app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+      app:layout_constraintBottom_toTopOf="@id/bannerAdLayout"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/currentLocationLayoutLand"
+      tools:itemCount="5"
+      tools:listitem="@layout/item_server" />
+
+   <ProgressBar
+      android:id="@+id/loadingServers"
+      android:layout_width="56dp"
+      android:layout_height="56dp"
+      app:layout_constraintBottom_toTopOf="@id/bannerAdLayout"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/currentLocationLayoutLand" />
+
+   <FrameLayout
+      android:id="@+id/bannerAdLayout"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

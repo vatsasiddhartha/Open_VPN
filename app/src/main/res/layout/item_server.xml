@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+   xmlns:app="http://schemas.android.com/apk/res-auto"
+   xmlns:tools="http://schemas.android.com/tools"
+   android:layout_width="match_parent"
+   android:layout_height="wrap_content"
+   android:layout_marginHorizontal="12dp"
+   android:layout_marginVertical="8dp"
+   android:clickable="true"
+   android:focusable="true"
+   android:foreground="?android:attr/selectableItemBackground"
+   app:cardBackgroundColor="@color/card_background"
+   app:cardCornerRadius="8dp"
+   app:cardElevation="8dp">
+
+   <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:padding="6dp">
+
+      <androidx.appcompat.widget.AppCompatImageView
+         android:id="@+id/flag"
+         android:layout_width="48dp"
+         android:layout_height="48dp"
+         android:src="@drawable/ic_auto"
+         app:layout_constraintBottom_toBottomOf="parent"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toTopOf="parent" />
+
+      <TextView
+         android:id="@+id/title"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginStart="8dp"
+         android:gravity="start"
+         android:text="@string/auto"
+         android:textSize="16sp"
+         app:layout_constraintBottom_toTopOf="@id/subtitle"
+         app:layout_constraintStart_toEndOf="@id/flag"
+         app:layout_constraintTop_toTopOf="@id/flag" />
+
+      <TextView
+         android:id="@+id/subtitle"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginStart="8dp"
+         android:layout_marginTop="8dp"
+         android:text=""
+         android:textSize="13sp"
+         app:layout_constraintBottom_toBottomOf="@id/flag"
+         app:layout_constraintStart_toEndOf="@id/flag"
+         app:layout_constraintTop_toBottomOf="@id/title" />
+
+      <TextView
+         android:id="@+id/connected_devices"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginEnd="10dp"
+         android:drawablePadding="4dp"
+         android:gravity="center"
+         android:textSize="11sp"
+         app:drawableEndCompat="@drawable/ic_baseline_devices_14"
+         app:layout_constraintBottom_toTopOf="@id/free_connect_duration"
+         app:layout_constraintEnd_toStartOf="@id/info_barrier"
+         app:layout_constraintTop_toTopOf="parent"
+         tools:text="14" />
+
+      <androidx.appcompat.widget.AppCompatTextView
+         android:id="@+id/free_connect_duration"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginEnd="10dp"
+         android:drawablePadding="4dp"
+         android:textSize="11sp"
+         app:drawableEndCompat="@drawable/ic_baseline_access_time_14"
+         app:layout_constraintBottom_toTopOf="@id/ping_barrier"
+         app:layout_constraintEnd_toStartOf="@id/info_barrier"
+         app:layout_constraintTop_toBottomOf="@id/connected_devices"
+         tools:text="30 min" />
+
+      <androidx.constraintlayout.widget.Barrier
+         android:id="@+id/ping_barrier"
+         android:layout_width="match_parent"
+         android:layout_height="0dp"
+         app:barrierDirection="top"
+         app:constraint_referenced_ids="ping, pinging" />
+
+      <com.github.ybq.android.spinkit.SpinKitView
+         android:id="@+id/pinging"
+         style="@style/SpinKitView.Small.ThreeBounce"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_gravity="center"
+         android:layout_marginEnd="10dp"
+         app:SpinKit_Color="@color/primary"
+         app:layout_constraintBottom_toBottomOf="parent"
+         app:layout_constraintEnd_toStartOf="@id/info_barrier"
+         app:layout_constraintTop_toBottomOf="@id/free_connect_duration" />
+
+      <TextView
+         android:id="@+id/ping"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginEnd="10dp"
+         android:drawablePadding="4dp"
+         android:text="@string/ping_text"
+         android:textSize="11sp"
+         android:visibility="gone"
+         app:layout_constraintBottom_toBottomOf="parent"
+         app:layout_constraintEnd_toStartOf="@id/info_barrier"
+         app:layout_constraintTop_toBottomOf="@id/free_connect_duration" />
+
+      <androidx.constraintlayout.widget.Barrier
+         android:id="@+id/info_barrier"
+         android:layout_width="0dp"
+         android:layout_height="0dp"
+         app:barrierDirection="start"
+         app:constraint_referenced_ids="freeOrPremium, options" />
+
+      <TextView
+         android:id="@+id/freeOrPremium"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginEnd="4dp"
+         android:background="@drawable/button_background"
+         android:paddingHorizontal="4dp"
+         android:paddingVertical="2dp"
+         android:text="@string/premium"
+         android:textColor="@color/white"
+         android:textSize="@dimen/server_badge_text_size"
+         app:layout_constraintBottom_toTopOf="@id/options"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintTop_toTopOf="parent" />
+
+      <androidx.appcompat.widget.AppCompatImageButton
+         android:id="@+id/options"
+         android:layout_width="24dp"
+         android:layout_height="24dp"
+         android:layout_marginEnd="4dp"
+         android:background="@drawable/options_button_background"
+         app:layout_constraintBottom_toBottomOf="parent"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintTop_toBottomOf="@id/freeOrPremium"
+         app:srcCompat="@drawable/ic_baseline_more_vert_24" />
+
+   </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

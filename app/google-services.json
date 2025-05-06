@@ -1,0 +1,108 @@
+{
+  "project_info": {
+    "project_number": "288291842482",
+    "firebase_url": "https://z-vpn-d6b98.firebaseio.com",
+    "project_id": "z-vpn-d6b98",
+    "storage_bucket": "z-vpn-d6b98.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:288291842482:android:4cfbcda7a7571ecc719cab",
+        "android_client_info": {
+          "package_name": "com.dzboot.ovpn"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "288291842482-iv9695ukmqao5hkg5vu04ib9c6bqghk5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXSHQOJxeQsnDDzoESLwsTn6MutRgZ4a8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "288291842482-iv9695ukmqao5hkg5vu04ib9c6bqghk5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:288291842482:android:5144c33eecafab0f719cab",
+        "android_client_info": {
+          "package_name": "com.dzboot.vpn"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "288291842482-ra4segtf3s8klaubi2ggeif3ea1ap2vl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dzboot.vpn",
+            "certificate_hash": "45afd8e9fd2a22ab4986afb8fab9880f8c4f6354"
+          }
+        },
+        {
+          "client_id": "288291842482-iv9695ukmqao5hkg5vu04ib9c6bqghk5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXSHQOJxeQsnDDzoESLwsTn6MutRgZ4a8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "288291842482-iv9695ukmqao5hkg5vu04ib9c6bqghk5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-5988847274491442~3972073444"
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:288291842482:android:e2012b35f5da1537719cab",
+        "android_client_info": {
+          "package_name": "com.dzboot.vpnz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "288291842482-iv9695ukmqao5hkg5vu04ib9c6bqghk5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXSHQOJxeQsnDDzoESLwsTn6MutRgZ4a8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "288291842482-iv9695ukmqao5hkg5vu04ib9c6bqghk5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-5988847274491442~6208879962"
+    }
+  ],
+  "configuration_version": "1"
+}

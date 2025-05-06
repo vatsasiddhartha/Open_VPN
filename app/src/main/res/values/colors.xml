@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   <!-- Primary colors: now using a bold and modern red theme -->
+   <color name="primary">#FF0000</color> <!-- Bright red -->
+   <color name="primary_focused">#B30000</color> <!-- Darker red for focus -->
+   <color name="accent">#FF4D4D</color> <!-- Softer red for accents -->
+
+   <!-- Backgrounds: keeping a clean, minimal feel -->
+   <color name="background">#F9FBFF</color> <!-- Keeping the soft white -->
+   <color name="card_background">#E4E7EB</color> <!-- Light gray for cards -->
+
+   <!-- Status indicators: adjusted for a red theme -->
+   <color name="off">#A1A1A1</color> <!-- Neutral gray remains unchanged -->
+   <color name="ping_good">#00A86B</color> <!-- Green for success (kept for clarity) -->
+   <color name="ping_fair">#FFD700</color> <!-- Gold for fair (unchanged) -->
+   <color name="ping_bad">#FF0000</color> <!-- Bright red for bad ping -->
+
+   <!-- Text colors: ensuring readability -->
+   <color name="text_color">#1A1A1A</color> <!-- Almost black for contrast -->
+   <color name="gray">#B0B0B0</color> <!-- Subtle gray for hints -->
+   <color name="dark">#2C2C2C</color> <!-- Deep gray for headings -->
+</resources>

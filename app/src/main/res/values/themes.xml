@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+   <style name="AppTheme.Base.Startup" parent="Theme.SplashScreen">
+      <item name="windowSplashScreenBackground">@android:color/white</item>
+      <item name="windowSplashScreenAnimationDuration">300</item>
+      <item name="postSplashScreenTheme">@style/AppTheme.Main</item>
+      <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+      <item name="android:statusBarColor">@android:color/white</item>
+      <item name="android:navigationBarColor">@android:color/white</item>
+   </style>
+
+   <style name="AppTheme.Startup" parent="AppTheme.Base.Startup">
+      <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher_foreground</item>
+   </style>
+
+   <style name="AppTheme" parent="@style/Theme.MaterialComponents.DayNight.NoActionBar">
+      <item name="colorPrimary">@color/primary</item>
+      <item name="colorPrimaryDark">@color/background</item>
+      <item name="windowActionBar">false</item>
+      <item name="windowNoTitle">true</item>
+   </style>
+
+   <style name="AppTheme.Main" parent="AppTheme">
+      <item name="colorAccent">@color/accent</item>
+      <item name="android:windowBackground">@color/background</item>
+      <item name="android:navigationBarColor">@color/background</item>
+      <item name="android:windowLightStatusBar" tools:targetApi="m">@bool/lightStatusBar</item>
+   </style>
+
+   <style name="Theme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+   <style name="Theme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+   <style name="Theme.Transparent" parent="android:Theme">
+      <item name="android:windowIsTranslucent">true</item>
+      <item name="android:windowBackground">@android:color/transparent</item>
+      <item name="android:windowContentOverlay">@null</item>
+      <item name="android:windowNoTitle">true</item>
+      <item name="android:windowIsFloating">true</item>
+      <item name="android:backgroundDimEnabled">false</item>
+   </style>
+
+</resources>

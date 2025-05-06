@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   xmlns:app="http://schemas.android.com/apk/res-auto"
+   xmlns:tools="http://schemas.android.com/tools"
+   android:layout_width="match_parent"
+   android:layout_height="match_parent"
+   android:background="@color/card_background"
+   android:gravity="center"
+   android:orientation="vertical">
+
+   <TextView
+      android:id="@+id/locationLabel"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="16dp"
+      android:text="@string/select_server"
+      android:textSize="16sp"
+      app:layout_constraintBottom_toBottomOf="@id/close"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+   <ImageButton
+      android:id="@+id/close"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="8dp"
+      android:contentDescription="@string/hide_servers_list"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:srcCompat="@drawable/ic_baseline_close_24" />
+
+   <ImageButton
+      android:id="@+id/refresh"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="8dp"
+      android:contentDescription="@string/refresh_servers_list"
+      android:visibility="gone"
+      app:layout_constraintEnd_toStartOf="@id/close"
+      app:layout_constraintTop_toTopOf="parent"
+      app:srcCompat="@drawable/ic_baseline_refresh_24"
+      tools:visibility="visible" />
+
+   <ProgressBar
+      android:id="@+id/loadingServers"
+      android:layout_width="56dp"
+      android:layout_height="56dp"
+      app:layout_constraintBottom_toTopOf="@id/bannerAdLayout"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+   <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/serversList"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:fadeScrollbars="false"
+      android:orientation="vertical"
+      android:scrollbars="vertical"
+      android:visibility="gone"
+      app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+      app:layout_constraintBottom_toTopOf="@id/bannerAdLayout"
+      app:layout_constraintTop_toBottomOf="@id/close"
+      tools:itemCount="8"
+      tools:listitem="@layout/item_server"
+      tools:visibility="visible" />
+
+   <FrameLayout
+      android:id="@+id/bannerAdLayout"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

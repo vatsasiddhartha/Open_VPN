@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+   xmlns:tools="http://schemas.android.com/tools"
+   android:layout_width="match_parent"
+   android:layout_height="match_parent"
+   android:gravity="center">
+
+   <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/notifications_count"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:contentDescription="@string/notifications_center"
+      android:drawableStart="@drawable/ic_baseline_notifications_24"
+      android:drawablePadding="4dp"
+      android:padding="4dp"
+      android:textColor="@android:color/holo_red_light"
+      tools:text="27" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

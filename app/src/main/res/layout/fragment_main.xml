@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   xmlns:app="http://schemas.android.com/apk/res-auto"
+   xmlns:tools="http://schemas.android.com/tools"
+   android:id="@+id/mainFragmentContainer"
+   android:layout_width="match_parent"
+   android:layout_height="match_parent"
+   android:animateLayoutChanges="true"
+   android:background="@color/background">
+
+   <com.google.android.ads.nativetemplates.TemplateView
+      android:id="@+id/nativeAdView"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:visibility="gone"
+      app:gnt_template_type="@layout/gnt_small_template_view"
+      app:layout_constraintTop_toTopOf="parent" />
+
+   <androidx.appcompat.widget.AppCompatImageButton
+      android:id="@+id/info"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="8dp"
+      android:background="@drawable/close_button_background"
+      android:elevation="10dp"
+      android:padding="8dp"
+      android:src="@drawable/ic_baseline_error_24"
+      android:visibility="gone"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/nativeAdView"
+      tools:visibility="visible" />
+
+   <include
+      android:id="@+id/info_layout"
+      layout="@layout/layout_info"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="8dp"
+      android:visibility="gone"
+      app:layout_constraintEnd_toStartOf="@id/info"
+      app:layout_constraintTop_toBottomOf="@id/nativeAdView"
+      tools:visibility="visible" />
+
+   <RelativeLayout
+      android:id="@+id/connectLayout"
+      android:layout_width="200dp"
+      android:layout_height="200dp"
+      android:layout_margin="32dp"
+      app:layout_constraintBottom_toTopOf="@id/timeLeftProgress"
+      app:layout_constraintDimensionRatio="1:1"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/nativeAdView">
+
+      <androidx.appcompat.widget.AppCompatImageView
+         android:id="@+id/ivStatusBackground"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:layout_centerInParent="true"
+         android:background="@drawable/ic_shield_off"
+         android:scaleType="fitCenter" />
+
+      <androidx.appcompat.widget.AppCompatImageView
+         android:id="@+id/ivStatusForeground"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignParentBottom="true"
+         android:layout_centerHorizontal="true"
+         android:layout_marginBottom="16dp"
+         android:background="@drawable/ic_key" />
+
+   </RelativeLayout>
+
+   <TextView
+      android:id="@+id/tvLog"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="8dp"
+      android:drawablePadding="8dp"
+      android:gravity="center"
+      android:text="@string/not_connected"
+      android:textSize="18sp"
+      app:layout_constraintBottom_toTopOf="@id/timeLeftProgress"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent" />
+
+   <ProgressBar
+      android:id="@+id/timeLeftProgress"
+      style="?android:attr/progressBarStyleHorizontal"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_margin="8dp"
+      android:max="100"
+      android:visibility="gone"
+      app:layout_constraintBottom_toTopOf="@id/timeLeft" />
+
+   <TextView
+      android:id="@+id/timeLeft"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:gravity="center"
+      android:lines="2"
+      android:text="@string/time_left"
+      android:textSize="16sp"
+      android:visibility="gone"
+      tools:visibility="visible"
+      app:layout_constraintBottom_toBottomOf="@id/moreTime"
+      app:layout_constraintStart_toStartOf="@id/currentLocationLayout"
+      app:layout_constraintTop_toTopOf="@id/moreTime" />
+
+   <androidx.appcompat.widget.AppCompatButton
+      android:id="@+id/moreTime"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="12dp"
+      android:background="@drawable/button_background"
+      android:minHeight="0dp"
+      android:padding="8dp"
+      android:text="@string/more_time"
+      android:textAllCaps="false"
+      android:visibility="gone"
+      tools:visibility="visible"
+      app:layout_constraintBottom_toTopOf="@id/currentLocationLayout"
+      app:layout_constraintEnd_toEndOf="@id/connectLayout" />
+
+   <androidx.cardview.widget.CardView
+      android:id="@+id/currentLocationLayout"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="32dp"
+      android:layout_marginEnd="32dp"
+      android:layout_marginBottom="16dp"
+      android:clickable="true"
+      android:focusable="true"
+      android:foreground="?android:attr/selectableItemBackground"
+      app:cardBackgroundColor="@color/card_background"
+      app:cardCornerRadius="8dp"
+      app:cardElevation="8dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent">
+
+      <androidx.constraintlayout.widget.ConstraintLayout
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:padding="8dp">
+
+         <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/locationFlag"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:src="@drawable/ic_auto"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+         <TextView
+            android:id="@+id/locationTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/auto"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/locationSubtitle"
+            app:layout_constraintStart_toEndOf="@id/locationFlag"
+            app:layout_constraintTop_toTopOf="@id/locationFlag" />
+
+         <TextView
+            android:id="@+id/locationSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textSize="14sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/locationFlag"
+            app:layout_constraintStart_toEndOf="@id/locationFlag"
+            app:layout_constraintTop_toBottomOf="@id/locationTitle" />
+
+         <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/locationArrow"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_keyboard_arrow_right_24" />
+
+      </androidx.constraintlayout.widget.ConstraintLayout>
+
+   </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

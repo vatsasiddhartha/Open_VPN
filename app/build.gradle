@@ -1,0 +1,273 @@
+plugins {
+   id 'com.android.application'
+   id 'kotlin-android'
+   id 'com.google.devtools.ksp'
+   id 'com.google.gms.google-services'
+   id 'com.google.firebase.crashlytics'
+   id 'com.google.firebase.firebase-perf'
+   id "org.lsposed.lsparanoid"
+   id 'org.jetbrains.kotlin.android'
+}
+
+android {
+   compileSdk compileSDKVersion
+
+   defaultConfig {
+      applicationId appId
+      minSdk minSDKVersion
+      targetSdk targetSDKVersion
+      versionCode 16
+      versionName "4.3.2"
+      multiDexEnabled true
+
+      def langKey = "lang"
+      buildConfigField "String", "LANG_KEY", "\"${langKey}\""
+      resValue "string", "lang_key", langKey
+
+      def darkModeKey = "display_mode"
+      buildConfigField "String", "DISPLAY_MODE_KEY", "\"${darkModeKey}\""
+      resValue "string", "display_mode_key", darkModeKey
+
+      def autoModeKey = "auto_mode"
+      buildConfigField "String", "AUTO_MODE_KEY", "\"${autoModeKey}\""
+      resValue "string", "auto_mode_key", autoModeKey
+
+      def reconnectTimeoutKey = "reconnect_timeout"
+      buildConfigField "String", "RECONNECT_TIMEOUT_KEY", "\"${reconnectTimeoutKey}\""
+      resValue "string", "reconnect_timeout_key", reconnectTimeoutKey
+
+      def reconnectRetries = "reconnect_retries"
+      buildConfigField "String", "RECONNECT_RETRIES_KEY", "\"${reconnectRetries}\""
+      resValue "string", "reconnect_retries_key", reconnectRetries
+
+      def persistentNotifKey = "persistent_notif"
+      buildConfigField "String", "PERSISTENT_NOTIF_KEY", "\"${persistentNotifKey}\""
+      resValue "string", "persistent_notif_key", persistentNotifKey
+
+      def notifPermissionRationaleAcknowledgedKey = "notif_permission_rationale_acknowledged"
+      buildConfigField "String", "NOTIF_PERMISSION_RATIONALE_ACKNOWLEDGED",
+            "\"${notifPermissionRationaleAcknowledgedKey}\""
+
+      def resetGDPRKey = "reset_gdpr"
+      buildConfigField "String", "RESET_GDPR_KEY", "\"${resetGDPRKey}\""
+      resValue "string", "reset_gdpr_key", resetGDPRKey
+
+      def mySubs = "my_subscriptions"
+      buildConfigField "String", "MY_SUBSCRIPTIONS_KEY", "\"${mySubs}\""
+      resValue "string", "my_subscriptions_key", mySubs
+
+      def goToVPNSettingsKey = "go_to_vpn_settings"
+      buildConfigField "String", "GO_TO_VPN_SETTINGS_KEY", "\"${goToVPNSettingsKey}\""
+      resValue "string", "go_to_vpn_settings_key", goToVPNSettingsKey
+
+      def goToInfoPageKey = "go_to_info_page_key"
+      buildConfigField "String", "GO_TO_INFO_PAGE_KEY", "\"${goToInfoPageKey}\""
+      resValue "string", "go_to_info_page_key", goToInfoPageKey
+   }
+
+   buildTypes {
+
+      debug {
+         splits.abi.enable = false
+         splits.density.enable = false
+         aaptOptions.cruncherEnabled = false
+
+         firebaseCrashlytics {
+            mappingFileUploadEnabled false
+         }
+
+         manifestPlaceholders = [
+               crashlyticsEnabled   : false,
+               useClearText         : true,
+               networkSecurityConfig: "@null"
+         ]
+
+         buildConfigField "String", "BASE_URL", "\"$remoteBaseUrl\""
+//         buildConfigField "String", "BASE_URL", "\"\""
+         buildConfigField "boolean", "SHOW_ADS", "true"
+         buildConfigField "boolean", "ALWAYS_SUBSCRIBED", "false"
+      }
+
+      release {
+         minifyEnabled true
+         shrinkResources true
+         proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "rules.pro"
+
+         firebaseCrashlytics {
+            mappingFileUploadEnabled true
+         }
+
+         matchingFallbacks = ["release"]
+         manifestPlaceholders = [
+               crashlyticsEnabled   : true,
+               useClearText         : true,
+               networkSecurityConfig: "@null"
+         ]
+
+         //TODO
+//         manifestPlaceholders = [
+//               crashlyticsEnabled   : true,
+//               useClearText         : false,
+//               networkSecurityConfig: "@xml/network_security_config"
+//         ]
+
+         buildConfigField "String", "BASE_URL", "\"$remoteBaseUrl\""
+         buildConfigField "boolean", "SHOW_ADS", "true"
+         buildConfigField "boolean", "ALWAYS_SUBSCRIBED", "false"
+      }
+
+      //debugging release version
+      create("debugRelease") {
+         initWith release
+//         signingConfig signingConfigs.config
+         matchingFallbacks = ["release"]
+         debuggable true
+      }
+   }
+
+   applicationVariants.configureEach { variant ->
+      buildConfigField "boolean", "USE_LOCAL_ADMOB_IDS", "$useEmbeddedAdmobIds"
+      if (variant.buildType.name == "release" || variant.buildType.name == "debugRelease") {
+         variant.getMergedFlavor().manifestPlaceholders.adMobAppId = adMobAppId
+         buildConfigField "String", "ADMOB_BANNER_KEY", "\"$adMobBannerKey\""
+         buildConfigField "String", "ADMOB_INTERSTITIAL_KEY", "\"$interstitialKey\""
+         buildConfigField "String", "ADMOB_MORE_TIME_INTERSTITIAL_KEY", "\"$adMobMoreTimeInterstitialKey\""
+         buildConfigField "String", "ADMOB_APP_OPEN_KEY", "\"$adMobAppOpenKey\""
+         buildConfigField "String", "ADMOB_REWARDED_INTERSTITIAL_KEY", "\"$adMobRewardedInterstitialKey\""
+         buildConfigField "String", "ADMOB_NATIVE_KEY", "\"$adNativeAdvancedKey\""
+      } else {
+         //Using test keys
+         variant.getMergedFlavor().manifestPlaceholders.adMobAppId = "ca-app-pub-5988847274491442~3972073444"
+         buildConfigField "String", "ADMOB_BANNER_KEY", "\"ca-app-pub-3940256099942544/6300978111\""
+         buildConfigField "String", "ADMOB_INTERSTITIAL_KEY", "\"ca-app-pub-3940256099942544/1033173712\""
+         buildConfigField "String", "ADMOB_MORE_TIME_INTERSTITIAL_KEY", "\"ca-app-pub-3940256099942544/1033173712\""
+         buildConfigField "String", "ADMOB_APP_OPEN_KEY", "\"ca-app-pub-3940256099942544/9257395921\""
+         buildConfigField "String", "ADMOB_REWARDED_INTERSTITIAL_KEY", "\"ca-app-pub-3940256099942544/5224354917\""
+         buildConfigField "String", "ADMOB_NATIVE_KEY", "\"ca-app-pub-3940256099942544/2247696110\""
+      }
+   }
+
+   splits {
+      abi {
+         enable = true
+         reset()
+         include("x86", "x86_64", "armeabi-v7a", "arm64-v8a")
+         universalApk = true
+      }
+   }
+
+   buildFeatures {
+      viewBinding true
+   }
+
+   bundle {
+      language {
+         enableSplit = false
+      }
+   }
+
+   compileOptions {
+      coreLibraryDesugaringEnabled true
+      sourceCompatibility JavaVersion.VERSION_17
+      targetCompatibility JavaVersion.VERSION_17
+   }
+
+   kotlinOptions {
+      jvmTarget = '17'
+   }
+   namespace 'com.dzboot.ovpn'
+}
+
+dependencies {
+
+   implementation fileTree(include: ["*.jar", "*.aar"], dir: "libs")
+
+   implementation "androidx.core:core-ktx:$androidXCoreVersion"
+   implementation "androidx.appcompat:appcompat:$appCompatVersion"
+   implementation "com.google.android.material:material:$materialVersion"
+   implementation "androidx.fragment:fragment-ktx:$fragmentVersion"
+   implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
+   implementation "androidx.annotation:annotation:$androidXAnnotationVersion"
+   implementation "androidx.cardview:cardview:$cardviewVersion"
+   implementation "androidx.multidex:multidex:2.0.1"
+   implementation 'androidx.core:core-splashscreen:1.0.1'
+   implementation 'androidx.core:core-google-shortcuts:1.1.0'
+   implementation 'androidx.work:work-runtime-ktx:2.9.0'
+   implementation 'androidx.window:window:1.2.0'
+   implementation "androidx.preference:preference-ktx:$androidxPreferenceVersion"
+   implementation 'com.github.ybq:Android-SpinKit:1.4.0'
+   implementation "com.github.mancj:MaterialSearchBar:0.8.5"
+
+   //Timber logger
+   implementation "com.jakewharton.timber:timber:$timberVersion"
+   implementation 'com.github.bastienpaulfr:Treessence:1.0.5'
+
+   //Kotlin coroutines
+   def coroutineVersion = '1.8.0'
+   implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutineVersion"
+   implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutineVersion"
+
+   //Firebase
+   implementation platform("com.google.firebase:firebase-bom:32.8.0")
+   implementation "com.google.firebase:firebase-analytics-ktx"
+   implementation "com.google.firebase:firebase-messaging-ktx"
+   implementation "com.google.firebase:firebase-crashlytics-ktx"
+   implementation "com.google.firebase:firebase-perf-ktx"
+   implementation "com.google.firebase:firebase-inappmessaging-display-ktx"
+
+   //ads
+   implementation "com.google.android.gms:play-services-ads:$adMobVersion"
+   implementation "com.google.android.ump:user-messaging-platform:2.2.0"
+//   implementation 'com.google.android.ads:mediation-test-suite:2.0.0'
+//   implementation 'com.google.ads.mediation:facebook:6.8.0.0'
+//   implementation 'com.google.ads.mediation:inmobi:10.0.2.0'
+//   implementation 'com.google.ads.mediation:adcolony:4.6.5.0'
+
+   //Gson
+   implementation "com.google.code.gson:gson:2.10.1"
+
+   //Room
+   def roomVersion = "2.6.1"
+   implementation "androidx.room:room-runtime:$roomVersion"
+   implementation "androidx.room:room-ktx:$roomVersion"
+   ksp "androidx.room:room-compiler:$roomVersion"
+
+   //Retrofit
+   def retrofitVersion = "2.9.0"
+   implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+   implementation "com.squareup.retrofit2:converter-scalars:$retrofitVersion"
+   implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+   implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.12'
+
+   //Play In-App Review
+   def inAppReviewVersion = "2.0.1"
+   implementation "com.google.android.play:review:$inAppReviewVersion"
+   implementation "com.google.android.play:review-ktx:$inAppReviewVersion"
+
+   def inAppUpdateVersion = "2.1.0"
+   implementation "com.google.android.play:app-update:$inAppUpdateVersion"
+   implementation "com.google.android.play:app-update-ktx:$inAppUpdateVersion"
+
+   //Billing
+   def billingVersion = "6.2.0"
+   implementation "com.android.billingclient:billing-ktx:$billingVersion"
+
+   //Lifecycle
+   def lifecycleVersion = "2.7.0"
+   implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycleVersion"
+   implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion"
+   implementation "androidx.lifecycle:lifecycle-process:$lifecycleVersion"
+
+   //Icons
+   def iconicsVersion = '5.4.0'
+   implementation "com.mikepenz:iconics-core:$iconicsVersion"
+   implementation "com.mikepenz:iconics-views:$iconicsVersion"
+   implementation 'com.mikepenz:material-design-iconic-typeface:2.2.0.5@aar'
+   implementation 'com.mikepenz:google-material-typeface:4.0.0.1-kotlin@aar'
+   implementation 'com.mikepenz:fontawesome-typeface:5.13.3.0-kotlin@aar'
+   implementation 'com.mikepenz:ionicons-typeface:2.0.1.7-kotlin@aar'
+
+   //PrettyTime
+   coreLibraryDesugaring "com.android.tools:desugar_jdk_libs:2.0.4"
+   implementation 'org.ocpsoft.prettytime:prettytime:5.0.7.Final'
+}

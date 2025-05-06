@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   <bool name="lightStatusBar">true</bool>
+
+   <dimen name="server_badge_text_size">10sp</dimen>
+   <dimen name="server_title_size">14sp</dimen>
+   <dimen name="server_icon_size">24dp</dimen>
+   <dimen name="server_arrow_size">20dp</dimen>
+</resources>

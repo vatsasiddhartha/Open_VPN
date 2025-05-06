@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+   xmlns:tools="http://schemas.android.com/tools">
+
+   <uses-feature
+      android:name="android.hardware.location.gps"
+      android:required="false" />
+   <uses-feature
+      android:name="android.software.leanback"
+      android:required="false" />
+   <uses-feature
+      android:name="android.hardware.touchscreen"
+      android:required="false" />
+
+   <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+   <uses-permission android:name="android.permission.VIBRATE" />
+   <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+   <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+   <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+   <uses-permission android:name="android.permission.INTERNET" />
+   <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SYSTEM_EXEMPTED" />
+
+   <application
+      android:name=".Application"
+      android:allowBackup="true"
+      android:appCategory="productivity"
+      android:banner="@drawable/ic_banner"
+      android:fullBackupContent="@xml/backup_rules"
+      android:icon="@mipmap/ic_launcher"
+      android:label="@string/app_name"
+      android:networkSecurityConfig="${networkSecurityConfig}"
+      android:supportsRtl="true"
+      android:theme="@style/AppTheme.Startup"
+      android:usesCleartextTraffic="${useClearText}"
+      tools:ignore="UnusedAttribute">
+
+      <!--region Activities-->
+      <activity
+         android:name=".activities.MainActivity"
+         android:exported="false"
+         android:launchMode="singleTask"
+         android:theme="@style/AppTheme.Main" />
+
+      <activity
+         android:name=".activities.IntroActivity"
+         android:exported="true">
+         <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.BROWSABLE" />
+            <category android:name="android.intent.category.LAUNCHER" />
+            <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+         </intent-filter>
+         <intent-filter>
+            <action android:name="android.service.quicksettings.action.QS_TILE_PREFERENCES" />
+         </intent-filter>
+      </activity>
+
+      <activity
+         android:name=".activities.ShortcutToServiceActivity"
+         android:launchMode="singleInstance"
+         android:noHistory="true"
+         android:theme="@style/Theme.Transparent" />
+      <!--endregion-->
+
+      <!--region Metas-->
+      <meta-data
+         android:name="firebase_analytics_collection_enabled"
+         android:value="true" />
+      <meta-data
+         android:name="firebase_crashlytics_collection_enabled"
+         android:value="${crashlyticsEnabled}" />
+      <meta-data
+         android:name="com.google.android.gms.ads.APPLICATION_ID"
+         android:value="${adMobAppId}" />
+
+      <!-- Set color used with incoming notification messages. This is used when no color is set for the incoming
+           notification message. See README(https://goo.gl/6BKBk7) for more. -->
+      <meta-data
+         android:name="com.google.firebase.messaging.default_notification_color"
+         android:resource="@color/primary" />
+      <meta-data
+         android:name="com.google.firebase.messaging.default_notification_icon"
+         android:resource="@drawable/ic_baseline_notifications_24" />
+      <!--endregion-->
+
+      <!--region Services-->
+      <service
+         android:name=".services.VPNService"
+         android:enabled="true"
+         android:exported="false"
+         android:foregroundServiceType="systemExempted"
+         android:permission="android.permission.BIND_VPN_SERVICE">
+         <intent-filter>
+            <action android:name="android.net.VpnService" />
+         </intent-filter>
+      </service>
+
+      <service
+         android:name=".services.Messaging"
+         android:exported="false">
+         <intent-filter>
+            <action android:name="com.google.firebase.MESSAGING_EVENT" />
+         </intent-filter>
+      </service>
+      <!--endregion-->
+
+      <!--region Receivers-->
+      <receiver android:name=".services.NotificationActionBroadcast" />
+      <!--endregion-->
+
+      <!--TODO remove this when Admob solves the issue with AGP8.3.0-->
+      <property
+         android:name="android.adservices.AD_SERVICES_CONFIG"
+         android:resource="@xml/gma_ad_services_config"
+         tools:replace="android:resource" />
+
+   </application>
+
+</manifest>

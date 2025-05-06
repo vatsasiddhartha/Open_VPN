@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+   <style name="AppTheme.Base.Startup" parent="Theme.SplashScreen">
+      <item name="windowSplashScreenBackground">@android:color/black</item>
+      <item name="windowSplashScreenAnimationDuration">300</item>
+      <item name="postSplashScreenTheme">@style/AppTheme.Main</item>
+      <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+      <item name="android:statusBarColor">@android:color/black</item>
+      <item name="android:navigationBarColor">@android:color/black</item>
+   </style>
+
+   <style name="Theme.AppBarOverlay" parent="ThemeOverlay.AppCompat.ActionBar" />
+
+   <style name="Theme.PopupOverlay" parent="ThemeOverlay.AppCompat.Dark" />
+</resources>

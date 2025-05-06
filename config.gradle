@@ -1,0 +1,38 @@
+ext {
+
+   //TODO change your appId here
+   appId = "com.dzboot.ovpn"
+
+   //TODO Use your control panel IP address or domain name (example: "http://vpn.example.com/")
+   remoteBaseUrl = "https://vpndemo.dzboot.com/"
+
+   //TODO : true if you want to use AdMob ids in this file or false if you want to use AdMob ids from admin panel
+   useEmbeddedAdmobIds = true
+
+   //TODO use your own admob keys
+   adMobAppId = "ca-app-pub-5988847274491442~3972073444"
+   adMobBannerKey = "ca-app-pub-3940256099942544/6300978111"
+   interstitialKey = "ca-app-pub-3940256099942544/1033173712"
+   adMobMoreTimeInterstitialKey = "ca-app-pub-3940256099942544/1033173712"
+   adMobAppOpenKey = "ca-app-pub-3940256099942544/9257395921"
+   adMobRewardedInterstitialKey = "ca-app-pub-3940256099942544/5224354917"
+   adNativeAdvancedKey = "ca-app-pub-3940256099942544/2247696110"
+//      adNativeAdvancedKey = "ca-app-pub-3940256099942544/1044960115" //with video
+
+   minSDKVersion = 21
+   compileSDKVersion = 34
+   targetSDKVersion = 34
+
+   appCompatVersion = '1.6.1'
+   fragmentVersion = '1.6.2'
+   androidXCoreVersion = '1.12.0'
+   androidXAnnotationVersion = '1.6.0'
+   constraintLayoutVersion = '2.1.4'
+   recyclerviewVersion = '1.2.1'
+   materialVersion = '1.11.0'
+   cardviewVersion = '1.0.0'
+   timberVersion = '5.0.1'
+   adMobVersion = '23.0.0'
+   navVersion = '2.4.0'
+   androidxPreferenceVersion = '1.2.1'
+}

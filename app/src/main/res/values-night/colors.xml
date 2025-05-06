@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   <!-- Card background color, a dark shade for contrast -->
+   <color name="card_background">#E60D0D0D</color>
+
+   <!-- Accent color, a light golden shade for highlighting elements -->
+   <color name="accent">#F1D666</color>
+
+   <!-- Text color, a white shade for readability -->
+   <color name="text_color">#FFFEFE</color>
+
+   <!-- Background color, a blue shade with transparency (changed in Change1) -->
+   <color name="background">#E00048FF</color>
+
+   <!-- Ping good color, a bright green indicating a good network status -->
+   <color name="ping_good">#FF00FF00</color>
+</resources>

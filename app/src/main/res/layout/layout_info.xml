@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+   xmlns:app="http://schemas.android.com/apk/res-auto"
+   xmlns:tools="http://schemas.android.com/tools"
+   android:id="@+id/container"
+   android:layout_width="wrap_content"
+   android:layout_height="wrap_content"
+   android:layout_margin="8dp"
+   app:cardBackgroundColor="@color/card_background"
+   app:cardCornerRadius="8dp"
+   app:cardElevation="8dp">
+
+   <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="wrap_content"
+      android:layout_height="match_parent"
+      android:padding="8dp">
+
+      <TextView
+         android:id="@+id/data_down"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:maxLines="1"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toTopOf="parent"
+         tools:text="@string/data_down" />
+
+      <TextView
+         android:id="@+id/data_up"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="8dp"
+         android:maxLines="1"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toBottomOf="@id/data_down"
+         tools:text="@string/data_up" />
+
+      <TextView
+         android:id="@+id/original_ip"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="8dp"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toBottomOf="@id/data_up"
+         tools:text="@string/original_ip" />
+
+      <TextView
+         android:id="@+id/new_ip"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="8dp"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toBottomOf="@id/original_ip"
+         tools:text="@string/new_ip" />
+
+      <TextView
+         android:id="@+id/connected_devices"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="8dp"
+         android:maxLines="1"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toBottomOf="@id/new_ip"
+         tools:text="@string/connected_devices" />
+
+   </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

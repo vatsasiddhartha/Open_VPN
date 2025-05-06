@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   <string name="nought_alwayson_warning"><![CDATA[如果未收到VPN确认对话框，则为另一个应用程序启用了\“ Always on VPN\”。在这种情况下，仅允许该应用程序连接到VPN。检查设置->网络更多..-> VPNS]]></string>
+   <string name="open_settings">转到设置</string>
+   <string name="home">主页</string>
+   <string name="allowed_apps">设为首页允许的应用</string>
+   <string name="settings">设置</string>
+   <string name="close_drawer">关闭抽屉</string>
+   <string name="open_drawer">打开抽屉</string>
+   <string name="auto">自动</string>
+   <string name="select_server">选择所需的位置</string>
+   <string name="not_connected">未连接</string>
+   <string name="connected">已连接</string>
+   <string name="connecting">正在连接…</string>
+   <string name="connected_to">已连接到%1$s</string>
+   <string name="reconnecting">正在重新连接…</string>
+
+   <string name="log_no_internet">请先连接到互联网</string>
+
+   <string name="share_message">安全，自由地浏览互联网: https://play.google.com/store/apps/details?id=%1$s</string>
+   <string name="loading">正在加载…</string>
+   <string name="active_apps_count">活动应用程序（%1$d/%2$d）</string>
+   <string name="appearance">外观</string>
+
+   <string name="unknown_error">发生错误，请稍后再试。</string>
+   <string name="click_retry">单击此处重试</string>
+   <string name="agree_label">继续使用该应用程序，即表示您同意我们的<b>隐私权政策</b>和<b>服务条款</b></string>
+   <string name="privacy_policy">隐私政策</string>
+   <string name="terms_of_service">服务条款</string>
+   <string name="continue_to_app">继续应用</string>
+   <string name="no_servers">找不到服务器！</string>
+   <string name="close_app">关闭</string>
+   <string name="disconnect_alert_title">关闭应用</string>
+   <string name="server_change_disconnect_alert_message">断开警报更改服务器将使您当前的连接断开。你要继续吗？</string>
+
+   <string name="notifications">通知</string>
+   <string name="dark_mode">暗模式</string>
+   <string name="persistent_notification_summary">在通知栏中显示永久性通知</string>
+   <string name="persistent_notification">持续通知</string>
+   <string name="persistent_notif_title">VPN未连接！</string>
+   <string name="persistent_notif_text">连接成为安全的…</string>
+   <string name="subscribe">订阅</string>
+   <string name="monthly_price">%1$s/月</string>
+   <string name="yearly_price">%1$s/年</string>
+   <string name="purchase_flow_fail">无法启动购买活动</string>
+   <string name="subscribe_prompt">仅享受无广告的VPN应用:</string>
+
+   <string name="language_pref_title">语言</string>
+   <string name="default_mode">默认（系统）</string>
+   <string name="lang_summary">当前选择的语言是: %1$s</string>
+   <string name="language_dialog_title">选择显示语言</string>
+   <string name="display_mode_summary">显示模式设置为： %1$s</string>
+   <string name="dark">黑暗</string>
+   <string name="light">轻</string>
+   <string name="connect">连接</string>
+   <string name="disconnect">断开</string>
+   <string name="no_app_event">抱歉，没有应用程序可以处理此操作</string>
+   <string name="app_search_hint">输入应用名称</string>
+   <string name="app_search_placeholder">在此处搜索应用</string>
+   <string name="app_info">自由，安全地浏览Internet</string>
+   <string name="go_back">返回</string>
+   <string name="username">用户名</string>
+   <string name="password">密码</string>
+   <string name="show_password">显示密码</string>
+   <string name="save_credentials">保存密码</string>
+   <string name="apps_using_change_disconnect_alert_message">应用程序配置已更改。 您需要重新连接使这些更改生效。 您要立即断开连接吗？</string>
+
+   <string name="update_required">需要更新</string>
+   <string name="update_required_message">有新的更新。 强烈建议您安装更新以继续使用我们的应用程序而不会出现任何问题。</string>
+   <string name="help_us_prompt">我们需要您的帮助来保持服务器的正常运行。</string>
+   <string name="notif_rates">下载：%1$s上传：%2$s</string>
+   <string name="channel_name_status">连接状态更改</string>
+   <string name="channel_description_status">OpenVPN连接的状态更改（正在连接，正在认证…）</string>
+   <string name="channel_name_user_req">需要用户交互</string>
+   <string name="channel_description_user_req">OpenVPN连接需要用户输入，例如 两要素认证</string>
+   <string name="first_time_load">第一次加载\n请稍候…</string>
+   <string name="retry">重试</string>
+   <string name="connecting_to">正在连接到 %1$s</string>
+   <string name="load_servers_error">加载服务器时出错！ 请点击下面重试。</string>
+
+   <string name="certificate_outdated_update_prompt">已使用的证书已过期。 请更新应用程序以继续正常连接。</string>
+   <string name="illegal_copy">非法复制</string>
+   <string name="unlicensed_copy">您似乎正在使用该应用程序的未经许可的副本。 请从Google Play商店下载该应用程序，它是完全免费的。</string>
+   <string name="download">下载</string>
+   <string name="uninstall_toast">您需要先卸载应用程序</string>
+
+   <string name="version_1_s">版本：%1$s</string>
+   <string name="hide_servers_list">隐藏服务器列表</string>
+   <string name="refresh_servers_list">刷新服务器列表</string>
+   <string name="purchase_description">订阅以删除广告</string>
+   <string name="rate_description">评价我们</string>
+   <string name="support_us_title">支持我们</string>
+   <string name="support_us_prompt">您的几秒钟时间将帮助我们扩展服务器。 您想查看快速广告吗？</string>
+
+   <string name="servers_list">服务器列表</string>
+   <string name="auto_mode_pref_title">自动连接模式</string>
+   <string name="auto_mode_summary">选择自动后，连接到%1$s</string>
+   <string name="auto_mode_distance">最近的服务器</string>
+   <string name="auto_mode_load">负载最少的服务器</string>
+   <string name="channel_name_push">推送通知</string>
+   <string name="channel_description_push">Firebase 推送通知</string>
+   <string name="original_ip">原始IP：%1$s</string>
+   <string name="new_ip">新IP：%1$s</string>
+   <string name="data_down">已下载：%1$s</string>
+   <string name="data_up">上传：%1$s</string>
+   <string name="purchase_success">谢谢您的支持。 享受无广告 VPN :)</string>
+   <string name="ping_text">%1$d ms</string>
+   <string name="error">错误</string>
+   <string name="latency">延迟：%1$dms</string>
+   <string name="connected_devices">%1$d 连接设备</string>
+   <string name="share">分享</string>
+   <string name="rate">评价我们</string>
+
+   <string name="auto_mode_random">随机服务器</string>
+   <string name="thank_you">谢谢:)</string>
+   <string name="ads">广告</string>
+   <string name="reset_gdpr">重置 GDPR 同意</string>
+   <string name="not_consented_title">需要同意</string>
+   <string name="not_consented_message">我们的应用程序完全依靠广告和订阅来维护高质量的服务器。 请同意使用您的个人数据来投放广告（供应商列表中的至少一个供应商），或购买订阅以移除广告。</string>
+   <string name="reload_form">重新加载同意书</string>
+   <string name="notifications_center">通知中心</string>
+   <string name="delete_notification">删除通知</string>
+   <string name="new_notification">新：%1$s</string>
+   <string name="delete">删除</string>
+   <string name="details">详情</string>
+   <string name="notification_receive_time">收到：%1$s</string>
+   <string name="enable_all">启用所有</string>
+   <string name="disable_all">禁用所有</string>
+   <string name="no_notifications">没有新的通知。</string>
+
+   <string name="undo_delete_notification">删除成功。</string>
+   <string name="undo">撤消</string>
+   <string name="system">系统</string>
+   <string name="auto_start_summary">设备启动时自动启动应用程序</string>
+   <string name="auto_start_title">启动时自动启动应用程序</string>
+   <string name="auto_connect_summary">设备启动时自动连接到 VPN（仅限高级版）</string>
+   <string name="auto_connect_title">开机自动连接</string>
+   <string name="auto_connect_server">自动连接服务器</string>
+   <string name="auto_connect_server_summary">将自动连接到：%1$s</string>
+   <string name="prompt_draw_over_apps">需要权限</string>
+   <string name="prompt_draw_over_apps_title">从 Android 10 开始，此功能需要 Draw Over Apps 权限才能工作。请在下一个屏幕中启用它。</string>
+   <string name="go_to_app_settings">进入应用设置</string>
+   <string name="vpn_permission_required">您需要接受权限才能启用此功能</string>
+   <string name="draw_overlays_not_allowed">未获得许可，请重试。</string>
+   <string name="prompt_vpn_always_on">此功能要求您从系统设置中启用 Always-On VPS。请启用它以继续。</string>
+   <string name="prompt_vpn_always_on_title">需要永远在线的 VPN</string>
+   <string name="go_to_vpn_settings">转到 VPN 设置</string>
+   <string name="always_on_not_enabled">您没有启用 Always On 功能</string>
+   <string name="preparing_to_connect">准备连接</string>
+   <string name="rom_vpn_error">您的图片不支持 VPNService API，抱歉:(</string>
+   <string name="disconnect_in">您将在 %1$s 断开连接</string>
+   <string name="time_left">剩余时间：%1$s</string>
+   <string name="more_time">更多时间？</string>
+   <string name="no_ad">当前没有可用的广告，请稍后再试</string>
+   <string name="pause">暂停</string>
+   <string name="resume">继续</string>
+   <string name="stop">停止</string>
+   <string name="you_safe">您现在安全</string>
+
+   <string name="subscribed">您是高级用户</string>
+   <string name="free">免费</string>
+   <string name="premium">溢价</string>
+   <string name="premium_only">仅限高级</string>
+   <string name="open_info_description">打开信息窗口</string>
+   <string name="close_info_description">关闭信息窗口</string>
+   <string name="server_name">%1$s (%2$s)</string>
+   <string name="ip">IP：%1$s</string>
+   <string name="up_time">正常运行时间：%1$s</string>
+   <string name="reset">重置</string>
+   <string name="connect_prompt">单击连接开始。</string>
+   <string name="semesterly_price">%1$s/学期</string>
+   <string name="unexpected_error">意外错误</string>
+   <string name="subscribe_download_info_error">下载应用信息时出错。 请稍后再试</string>
+   <string name="not_subscribed_prompt">您需要订阅才能连接到此服务器</string>
+   <string name="drawer_menu">抽屉菜单</string>
+   <string name="connexion_status_icon">连接状态</string>
+   <string name="connect_shield">连接屏蔽</string>
+   <string name="no_ads_logo">无广告标志</string>
+   <string name="app_icon">应用程序图标</string>
+   <string name="country_flag">国旗</string>
+   <string name="intro_prompt">这个应用程序使用了来自世界各地的大量服务器。 这些服务器不是免费的，需要不断维护和升级，以随着应用程序的增长保持服务以最佳方式运行。 因此，我们的应用程序实施了一些广告，以确保每个人都可以免费使用该服务。 如果您想使用无广告版本，您可以以极低的价格订阅。\n 享受吧！</string>
+
+   <string name="subscription_required">此功能仅适用于订阅用户</string>
+   <string name="unlimited">无限</string>
+   <string name="connect_duration">%1$d 分钟</string>
+   <string name="go_to_app_info_page">转到信息页面</string>
+   <string name="add_shortcut">添加快捷方式</string>
+   <string name="connect_to">连接到 %1$s</string>
+   <string name="remove_shortcut">删除快捷方式</string>
+   <string name="already_connected">已连接到此服务器</string>
+   <string name="reconnect_timeout_summary">如果连接失败，请在 %1$d 秒后重试连接</string>
+   <string name="reconnect_timeout_title">重试连接超时</string>
+   <string name="reconnect_retries_summary">在 %1$d 次尝试失败后断开连接</string>
+   <string name="reconnect_retries_title">重试连接尝试</string>
+   <string name="retrying_count">重新连接…尝试：%1$d/%2$d</string>
+   <string name="wrong_credentials">用户名或密码不正确</string>
+   <string name="dropped_connection">连接已断开。 重试 %1$d 次后连接失败。</string>
+
+   <string name="allow_notifications">允许通知</string>
+   <string name="notification_permission_message">您需要允许显示通知，以免错过新功能和新闻。</string>
+   <string name="permission_denied_permanently_title">权限被拒绝</string>
+   <string name="permission_denied_permanently_message">用户拒绝了所需的权限。 请转到应用程序设置页面并允许它。</string>
+   <string name="more_time_dialog_message">您可以查看广告以获得该服务器的额外 %1$d 分钟。 您想继续吗？\n您需要观看完整的广告才能获得额外时间。</string>
+   <string name="try_again_later">请稍后再试。</string>
+   <string name="premium_server">此服务器仅适用于订阅用户</string>
+
+   <string name="subscriptions_terms">- 不提供免费试用或介绍性价格\n- 订阅将在期限结束时自动续订\n- 您可以随时无条件取消订阅\n- 您可以在“设置”页面</string>
+   <string name="show_subscriptions">中管理您的订阅 显示我的订阅</string>
+
+</resources>

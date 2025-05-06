@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+   <group android:id="@+id/group0">
+      <item
+         android:id="@+id/nav_home"
+         android:icon="@drawable/ic_baseline_home_24"
+         android:title="@string/home" />
+
+      <item
+         android:id="@+id/nav_servers"
+         android:title="@string/servers_list" />
+
+      <item
+         android:id="@+id/nav_allowed_apps"
+         android:icon="@drawable/ic_baseline_check_circle_24"
+         android:title="@string/allowed_apps" />
+   </group>
+
+   <group android:id="@+id/group1">
+      <item
+         android:id="@+id/nav_privacy"
+         android:icon="@drawable/ic_baseline_beenhere_24"
+         android:title="@string/privacy_policy" />
+      <item
+         android:id="@+id/nav_terms"
+         android:icon="@drawable/ic_baseline_beenhere_24"
+         android:title="@string/terms_of_service" />
+   </group>
+
+   <group android:id="@+id/group2">
+      <item
+         android:id="@+id/nav_purchase"
+         android:icon="@drawable/ic_no_ads"
+         android:title="@string/subscribe"
+         android:visible="false" />
+      <item
+         android:id="@+id/nav_share"
+         android:icon="@drawable/ic_baseline_share_24"
+         android:title="@string/share" />
+      <item
+         android:id="@+id/nav_rate"
+         android:icon="@drawable/ic_baseline_thumb_up_24"
+         android:title="@string/rate" />
+   </group>
+
+   <group android:id="@+id/group3">
+      <item
+         android:id="@+id/nav_notifications"
+         android:icon="@drawable/ic_baseline_notifications_24"
+         android:title="@string/notifications_center" />
+      <item
+         android:id="@+id/nav_settings"
+         android:icon="@drawable/ic_baseline_settings_24"
+         android:title="@string/settings" />
+   </group>
+
+</menu>

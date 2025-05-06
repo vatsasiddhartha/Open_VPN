@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   xmlns:app="http://schemas.android.com/apk/res-auto"
+   android:id="@+id/mainFragmentContainer"
+   android:layout_width="match_parent"
+   android:layout_height="match_parent"
+   android:animateLayoutChanges="true"
+   android:background="@color/background">
+
+   <RelativeLayout
+      android:id="@+id/connectLayout"
+      android:layout_width="200dp"
+      android:layout_height="200dp"
+      android:focusable="false"
+      app:layout_constraintBottom_toTopOf="@id/connect"
+      app:layout_constraintEnd_toStartOf="@id/info_layout"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent">
+
+      <androidx.appcompat.widget.AppCompatImageView
+         android:id="@+id/ivStatusBackground"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:layout_centerInParent="true"
+         android:background="@drawable/ic_shield_off" />
+
+      <androidx.appcompat.widget.AppCompatImageView
+         android:id="@+id/ivStatusForeground"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignParentBottom="true"
+         android:layout_centerHorizontal="true"
+         android:layout_marginBottom="16dp"
+         android:background="@drawable/ic_key" />
+
+   </RelativeLayout>
+
+   <include
+      android:id="@+id/info_layout"
+      layout="@layout/layout_info"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginHorizontal="32dp"
+      app:layout_constraintBottom_toTopOf="@id/connect"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@id/connectLayout"
+      app:layout_constraintTop_toTopOf="parent" />
+
+   <TextView
+      android:id="@+id/tvLog"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="16dp"
+      android:drawablePadding="8dp"
+      android:textSize="14sp"
+      app:layout_constraintBottom_toTopOf="@id/connect"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent" />
+
+   <ProgressBar
+      android:id="@+id/timeLeftProgress"
+      style="?android:attr/progressBarStyleHorizontal"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_centerHorizontal="true"
+      android:layout_centerVertical="true"
+      android:layout_marginHorizontal="8dp"
+      android:max="100"
+      android:visibility="gone"
+      app:layout_constraintBottom_toBottomOf="@id/connect"
+      app:layout_constraintEnd_toStartOf="@id/timeLeft"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="@id/connect" />
+
+   <TextView
+      android:id="@+id/timeLeft"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginHorizontal="8dp"
+      android:gravity="center"
+      android:text="@string/time_left"
+      android:textSize="16sp"
+      android:visibility="gone"
+      app:layout_constraintBottom_toBottomOf="@id/moreTime"
+      app:layout_constraintEnd_toStartOf="@id/moreTime"
+      app:layout_constraintStart_toEndOf="@id/timeLeftProgress"
+      app:layout_constraintTop_toTopOf="@id/moreTime" />
+
+   <androidx.appcompat.widget.AppCompatButton
+      android:id="@+id/moreTime"
+      android:layout_width="wrap_content"
+      android:layout_height="0dp"
+      android:layout_marginHorizontal="8dp"
+      android:background="@drawable/button_background"
+      android:paddingHorizontal="8dp"
+      android:text="@string/more_time"
+      android:visibility="gone"
+      app:layout_constraintBottom_toBottomOf="@id/connect"
+      app:layout_constraintEnd_toStartOf="@id/connect"
+      app:layout_constraintStart_toEndOf="@id/timeLeft"
+      app:layout_constraintTop_toTopOf="@id/connect" />
+
+   <androidx.appcompat.widget.AppCompatButton
+      android:id="@+id/connect"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginHorizontal="8dp"
+      android:layout_marginBottom="16dp"
+      android:text="@string/connect"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@id/moreTime" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
