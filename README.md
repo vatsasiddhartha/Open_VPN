@@ -1,15 +1,31 @@
-Prerequisites:
-Download and install:
-1. Git if you are running Windows on your PC.
-2. Android Studio (latest version) installed.
-Throughout this document, Windows with Git will be used. Windows OS is required to run the scripts.
-Extract downloaded main_files anywhere on your PC and keep folder structure as it is:
-• Don’t move folders elsewhere.
-• Don’t rename files or folders.
+🛠️ Prerequisites
+Before starting, make sure you have the following installed on your Windows PC:
 
+✅ Git
 
-1. Import project
-➢ Launch Android Studio then click on Open an existing Android Studio project to import the project. Then
-choose the location of your android_ovpn folder
-➢ Wait for Android Studio to import the project. It might take a while.
-➢ If an error message appears, just ignore it and click OK
+✅ Android Studio (Latest Version)
+
+⚠️ This setup is intended only for Windows OS users.
+
+📦 Project Files
+📥 Download the main_files.zip.
+
+📂 Extract it anywhere on your PC.
+
+⚠️ Important:
+
+❌ Do not move folders elsewhere
+
+❌ Do not rename any files or folders
+
+📲 Importing the Project
+🚀 Launch Android Studio
+
+📁 Click on “Open an existing Android Studio project”
+
+🔍 Navigate to the android_ovpn folder location
+
+🕐 Wait for the project to load (this may take a little time)
+
+❗ If you see an error message:
+➡️ Just ignore it and click OK
