@@ -1,85 +1,232 @@
-📘 OpenVPN Android App
-📖 Overview
+# 🔐 OpenVPN Android App
 
-The OpenVPN Android App is a beginner-friendly project designed to demonstrate how to integrate VPN functionality into an Android application. This app allows users to authenticate, securely connect to VPN servers across multiple countries, and protect their internet traffic through encrypted tunnels.
+A modern, secure OpenVPN client for Android built with **Jetpack Compose** and **Material Design 3**.
 
-The project focuses on network security, authentication, and VPN client integration, making it ideal for learning how Android handles secure communication and API interaction.
+![Android](https://img.shields.io/badge/Platform-Android-brightgreen)
+![Kotlin](https://img.shields.io/badge/Language-Kotlin-blue)
+![Jetpack Compose](https://img.shields.io/badge/UI-Jetpack%20Compose-orange)
+![OpenVPN](https://img.shields.io/badge/VPN-OpenVPN-red)
 
-⚙️ Tech Stack
+---
 
-Programming Language: Kotlin
+## 📱 App Screenshots
 
-UI Framework: Jetpack Compose (for modern and responsive UI)
+### 🏠 Main Interface
+<p align="center">
+  <img src="Screenshot%202025-09-14%20193226.png" alt="OpenVPN Main Screen" width="300"/>
+</p>
 
-Networking & VPN: OpenVPN SDK / API integration
+*Clean, intuitive main interface with easy connection controls*
 
-Architecture: MVVM (Model-View-ViewModel) for separation of concerns
+### ⚙️ Server Selection
+<p align="center">
+  <img src="Screenshot%202025-09-14%20193241.png" alt="Server Selection Screen" width="300"/>
+</p>
 
-Authentication: Secure login system with credentials before establishing VPN sessions
+*Browse and select from multiple VPN servers worldwide*
 
-Tools & Libraries:
+### 📊 Connection Status
+<p align="center">
+  <img src="Screenshot_20250914_193409.png" alt="Connection Status" width="300"/>
+</p>
 
-Retrofit / OkHttp → For API calls (server lists, authentication)
+*Real-time connection status and network statistics*
 
-OpenVPN SDK → For VPN tunnel setup and management
+---
 
-Coroutine & Flow → For asynchronous operations and live updates
+## ✨ Features
 
-Material 3 Design → For clean and user-friendly UI
+### 🔒 **Security & Privacy**
+- ✅ OpenVPN protocol support
+- ✅ AES-256 encryption
+- ✅ DNS leak protection  
+- ✅ Kill switch functionality
+- ✅ Certificate-based authentication
 
-🔐 Key Features
+### 🌐 **Server Management**
+- ✅ Multiple server locations
+- ✅ Auto server selection
+- ✅ Latency testing
+- ✅ Server favorites
+- ✅ Custom server import (.ovpn)
 
-User Authentication – Users must log in with valid credentials before accessing VPN services.
+### 🎨 **Modern UI/UX**
+- ✅ Material Design 3
+- ✅ Jetpack Compose UI
+- ✅ Dark/Light theme support
+- ✅ Smooth animations
+- ✅ Intuitive navigation
 
-Country-wise VPN Servers – Ability to choose servers from different countries or regions.
+### 📊 **Advanced Features**
+- ✅ Real-time connection statistics
+- ✅ Connection logs
+- ✅ Split tunneling
+- ✅ Auto-reconnect
+- ✅ Notification controls
 
-One-Tap VPN Connection – Connect/disconnect with a single click.
+---
 
-Encrypted Networking – Ensures private and secure communication by tunneling all traffic.
+## 🚀 Quick Start
 
-Session Management – Only authenticated and active sessions can establish VPN connections.
+### **For Users**
 
-Cross-Network Support – Works across Wi-Fi, mobile data, and different ISPs.
+#### 📥 **Download & Install**
+1. Download the latest APK from [Releases](../../releases)
+2. Enable "Install from unknown sources" in Android settings
+3. Install the APK
+4. Open the app and connect!
 
-🏗️ Installation & Setup
+#### 🔧 **First Time Setup**
+1. **Import Server Config**: Add your `.ovpn` configuration file
+2. **Enter Credentials**: Username/password if required
+3. **Connect**: Tap the connect button
+4. **Verify**: Check your IP address changed
 
-Clone the repository:
+### **For Developers**
 
-git clone https://github.com/yourusername/openvpn-android-app.git
+#### 🛠️ **Development Setup**
+```bash
+# Clone repository
+git clone https://github.com/vatsasiddhartha/Open_VPN1.git
+cd Open_VPN1
 
+# Quick setup
+./setup.sh
 
-Open in Android Studio
+# Configure API keys (see SETUP.md for details)
+# Then build
+./gradlew assembleDebug
+```
 
-Open the project in Android Studio.
+📖 **Detailed Instructions**: See [SETUP.md](SETUP.md) for complete development setup guide.
 
-Ensure Kotlin and Jetpack Compose are enabled.
+---
 
-Configure VPN Server & API
+## 📋 Requirements
 
-Update the VPN server endpoints and authentication API in application.properties or environment config.
+### **For Users**
+- 📱 Android 5.0 (API 21) or higher
+- 🔓 Permission to install from unknown sources
+- 📶 Internet connection
 
-Build & Run
+### **For Developers**
+- 🔧 Android Studio Hedgehog (2023.1.1) or later
+- ☕ JDK 11 or JDK 17
+- 📱 Android SDK 21+
+- 🐙 Git
 
-Connect an emulator or physical device.
+---
 
-Run the app from Android Studio.
+## 🏗️ Architecture
 
-📱 Usage
+### **Tech Stack**
+- **Language**: Kotlin 100%
+- **UI Framework**: Jetpack Compose
+- **Architecture**: MVVM + Repository Pattern
+- **DI**: Hilt/Dagger
+- **Database**: Room
+- **Networking**: Retrofit + OkHttp
+- **VPN Core**: OpenVPN Library
 
-Login/Register with valid credentials.
+### **Project Structure**
+```
+app/
+├── src/main/java/com/dzboot/ovpn/
+│   ├── activities/          # UI Activities
+│   ├── fragments/           # UI Fragments  
+│   ├── data/               # Data layer
+│   ├── helpers/            # Utility classes
+│   ├── constants/          # App constants
+│   └── base/               # Base classes
+├── templates/              # Configuration templates
+└── .github/workflows/      # CI/CD workflows
+```
 
-Select a Country/Region from the VPN server list.
+---
 
-Tap Connect to establish a secure VPN tunnel.
+## 🤝 Contributing
 
-Tap Disconnect to close the connection.
+We welcome contributions! Here's how to get started:
 
-📌 Future Enhancements
+### **🐛 Bug Reports**
+1. Check existing [issues](../../issues)
+2. Create detailed bug report with:
+   - Device info
+   - Android version  
+   - Steps to reproduce
+   - Screenshots if applicable
 
-Add support for multi-factor authentication (MFA).
+### **💡 Feature Requests**
+1. Open an [issue](../../issues/new)
+2. Describe the feature
+3. Explain use case
+4. Add mockups if possible
 
-Implement real-time server health monitoring.
+### **🔧 Code Contributions**
+1. Fork the repository
+2. Create feature branch: `git checkout -b feature/amazing-feature`
+3. Follow coding standards
+4. Add tests if applicable
+5. Create Pull Request
 
-Provide data usage and session logs.
+---
 
-Expand to support custom DNS and advanced VPN settings.
+## 🔄 Changelog
+
+### **v1.0.0** (Latest)
+- ✅ Initial release
+- ✅ OpenVPN core integration
+- ✅ Material Design 3 UI
+- ✅ Server management
+- ✅ Connection statistics
+- ✅ Setup documentation added
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 🆘 Support
+
+### **Need Help?**
+- 📖 Read the [SETUP.md](SETUP.md) guide
+- 🐛 Check [Issues](../../issues) for common problems
+- 💬 Create new [issue](../../issues/new) for support
+
+### **Contact**
+- 📧 Email: [your-email@domain.com]
+- 🐙 GitHub: [@vatsasiddhartha](https://github.com/vatsasiddhartha)
+
+---
+
+## ⭐ Show Your Support
+
+If this project helped you, please consider:
+- ⭐ **Starring** the repository
+- 🍴 **Forking** for your own use  
+- 🐛 **Reporting** bugs you find
+- 💡 **Suggesting** new features
+- 🤝 **Contributing** code improvements
+
+---
+
+## 📊 Project Stats
+
+![Build Status](../../workflows/Build%20and%20Test/badge.svg)
+![Release](../../workflows/Auto%20Release/badge.svg)
+![License](https://img.shields.io/badge/License-MIT-yellow.svg)
+![Contributors](https://img.shields.io/github/contributors/vatsasiddhartha/Open_VPN1.svg)
+![Last Commit](https://img.shields.io/github/last-commit/vatsasiddhartha/Open_VPN1.svg)
+
+---
+
+<p align="center">
+  <b>🔐 Secure • 🚀 Fast • 🎨 Beautiful • 📱 Modern</b>
+</p>
+
+<p align="center">
+  Made with ❤️ for the Android community
+</p>
