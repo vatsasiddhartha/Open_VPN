@@ -197,7 +197,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 - 💬 Create new [issue](../../issues/new) for support
 
 ### **Contact**
-- 📧 Email: [your-email@domain.com]
+- 📧 Email: [vatsasiddhartha3@gmail.com]
 - 🐙 GitHub: [@vatsasiddhartha](https://github.com/vatsasiddhartha)
 
 ---
